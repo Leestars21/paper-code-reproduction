@@ -4,6 +4,8 @@
 
 这是一个用于“代码优先复现论文方法”的 Codex skill。它面向科学、机器学习、计算方法和工程类论文，目标不是生成庞大的复现归档，而是帮助用户把论文中的核心方法整理成可运行、可阅读、可继续实验的代码项目。
 
+项目主页：[Leestars21/paper-code-reproduction](https://github.com/Leestars21/paper-code-reproduction)
+
 Skill 本体位于 `paper-code-reproduction/` 目录。
 
 ## 功能
@@ -36,24 +38,25 @@ Skill 本体位于 `paper-code-reproduction/` 目录。
 你可以在 Codex 中说：
 
 ```text
-请把这个仓库里的 paper-code-reproduction skill 安装到我的 Codex skills 目录，并验证它可用。
+请从 https://github.com/Leestars21/paper-code-reproduction 安装 paper-code-reproduction skill 到我的 Codex skills 目录，并验证它可用。
 ```
 
-Codex 应执行：
+Codex 通常会帮你完成：
 
-1. 将仓库中的 `paper-code-reproduction/` skill 目录复制到用户的 Codex skills 目录。
-2. 运行 `skill-creator` 的 `quick_validate.py` 验证 skill。
-3. 如果当前对话里 `$paper-code-reproduction` 没有立即出现，提示用户新开对话或刷新会话。
+1. 打开或克隆 [Leestars21/paper-code-reproduction](https://github.com/Leestars21/paper-code-reproduction)。
+2. 将仓库中的 `paper-code-reproduction/` skill 目录复制到用户的 Codex skills 目录。
+3. 校验 skill 是否可用。
+4. 如果当前对话里 `$paper-code-reproduction` 没有立即出现，提示用户新开对话或刷新会话。
 
 ### 方式二：手动安装
 
-在本项目目录下执行：
+打开项目主页 [Leestars21/paper-code-reproduction](https://github.com/Leestars21/paper-code-reproduction)，下载或克隆仓库，然后在本项目目录下执行：
 
 ```powershell
 Copy-Item -Recurse .\paper-code-reproduction "$env:USERPROFILE\.codex\skills\paper-code-reproduction"
 ```
 
-然后验证：
+可选：如果你已经安装了 Codex 的 `skill-creator` 工具，可以用下面的命令做一次高级验证：
 
 ```powershell
 conda run -n envpymc5 python "$env:USERPROFILE\.codex\skills\.system\skill-creator\scripts\quick_validate.py" "$env:USERPROFILE\.codex\skills\paper-code-reproduction"
@@ -146,7 +149,7 @@ python .\paper-code-reproduction\scripts\scaffold_reproduction_workspace.py --pr
 - 使用的论文类型；
 - 你期望复现的目标；
 - 触发问题的命令或输入；
-- 错误信息、阻塞点或不合理的输出结构。
+- 错误信息、失败原因或不合理的输出结构。
 
 ## License
 

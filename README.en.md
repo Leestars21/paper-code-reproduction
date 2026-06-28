@@ -4,6 +4,8 @@
 
 This is a Codex skill for code-first paper reproduction. It is designed for scientific, machine learning, computational, and engineering papers. The goal is not to create a large reproduction archive, but to help users turn the core method from a paper into runnable, readable, and extensible code.
 
+Project website: [Leestars21/paper-code-reproduction](https://github.com/Leestars21/paper-code-reproduction)
+
 The skill package lives in `paper-code-reproduction/`.
 
 ## Features
@@ -38,24 +40,25 @@ Do not use it for:
 You can ask Codex:
 
 ```text
-Install the paper-code-reproduction skill from this repository into my Codex skills directory and validate it.
+Install the paper-code-reproduction skill from https://github.com/Leestars21/paper-code-reproduction into my Codex skills directory and validate it.
 ```
 
-Codex should:
+Codex will usually:
 
-1. Copy the repository's `paper-code-reproduction/` skill folder into the user's Codex skills directory.
-2. Run `skill-creator`'s `quick_validate.py` on the installed skill.
-3. Tell the user to start a new Codex chat or refresh the session if `$paper-code-reproduction` does not appear immediately.
+1. Open or clone [Leestars21/paper-code-reproduction](https://github.com/Leestars21/paper-code-reproduction).
+2. Copy the repository's `paper-code-reproduction/` skill folder into the user's Codex skills directory.
+3. Validate that the skill is usable.
+4. Tell the user to start a new Codex chat or refresh the session if `$paper-code-reproduction` does not appear immediately.
 
 ### Option 2: Install manually
 
-From this project directory, run:
+Open [Leestars21/paper-code-reproduction](https://github.com/Leestars21/paper-code-reproduction), download or clone the repository, then run this from the project directory:
 
 ```powershell
 Copy-Item -Recurse .\paper-code-reproduction "$env:USERPROFILE\.codex\skills\paper-code-reproduction"
 ```
 
-Then validate it:
+Optional: if you already have Codex's `skill-creator` tooling installed, you can run an advanced validation check with:
 
 ```powershell
 conda run -n envpymc5 python "$env:USERPROFILE\.codex\skills\.system\skill-creator\scripts\quick_validate.py" "$env:USERPROFILE\.codex\skills\paper-code-reproduction"
@@ -148,7 +151,7 @@ Useful feedback includes:
 - paper type;
 - target you wanted to reproduce;
 - command or input that triggered the issue;
-- error message, blocker, or unexpected output structure.
+- error message, failure reason, or unexpected output structure.
 
 ## License
 
