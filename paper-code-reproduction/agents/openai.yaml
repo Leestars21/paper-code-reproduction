@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Code Reproduction"
+  short_description: "Compact code-first paper reproduction."
+  default_prompt: "Use $paper-code-reproduction to reproduce the local paper PDF in this folder with a compact code/ workspace, README reading order, and the first runnable baseline."
